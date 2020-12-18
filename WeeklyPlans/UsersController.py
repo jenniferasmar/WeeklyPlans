@@ -1,5 +1,5 @@
 from flask import Flask, request
-from Services import UsersService
+from Services.UsersService import UsersService
 
 app = Flask(__name__)
 
@@ -12,3 +12,4 @@ def create():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
