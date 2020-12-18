@@ -1,5 +1,5 @@
 from flask import Flask, request
-from WeeklyPlans.Services import UsersService
+from Services.UsersService import UsersService
 
 app = Flask(__name__)
 
