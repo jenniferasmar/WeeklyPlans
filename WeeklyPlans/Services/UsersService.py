@@ -1,6 +1,6 @@
 import json
 from types import SimpleNamespace
-from Models.Users import Users
+from Models import Users
 
 class UsersService:
 

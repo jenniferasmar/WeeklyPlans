@@ -1,5 +1,5 @@
 from flask import Flask, request
-from Services.UsersService import UsersService
+from Services import UsersService
 
 app = Flask(__name__)
 
