@@ -2,10 +2,10 @@ import mysql.connector
 from Models.Users import Users
 
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="",
-    password="",
-    database=""
+  host="localhost",
+  user="weeklyplans_admin",
+  password="weeklyplans",
+  database="weeklyplansDB"
 )
 mycursor = mydb.cursor()
 
