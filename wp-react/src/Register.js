@@ -4,6 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
+import Login from './Login'
 class Register extends Component {
   constructor(props){
     super(props);
@@ -54,9 +55,9 @@ class Register extends Component {
     //To be done:check for empty values before hitting submit
     var self = this;
     var payload={
-    "name": this.state.name,
-    "email":this.state.email,
-    "password":this.state.password
+    name: this.state.name,
+    email:this.state.email,
+    password:this.state.password
     }
     axios.post(apiBaseUrl+'/createUser', payload)
    .then(function (response) {
