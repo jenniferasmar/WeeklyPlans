@@ -3,9 +3,9 @@ from Models.Users import Users
 
 mydb = mysql.connector.connect(
   host="localhost",
-  user="WeeklyPlans_admin",
-  password="WeeklyPlans",
-  database="WeeklyPlans"
+  user="weeklyplans_admin",
+  password="weeklyplans",
+  database="weeklyplansDB"
 )
 mycursor = mydb.cursor()
 
