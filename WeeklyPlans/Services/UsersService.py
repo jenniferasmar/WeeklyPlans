@@ -11,7 +11,7 @@ def create_user(data):
     user = Users(user_dict)
     MySQL_Properties.add_user(user)
     return user.name
-    
+
 
 def login_user(data):
     user = MySQL_Properties.get_user_by_email(data['email'])
