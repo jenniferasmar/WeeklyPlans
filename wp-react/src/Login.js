@@ -45,8 +45,8 @@ render() {
     var apiBaseUrl = "http://127.0.0.1:5000";
     var self = this;
     var payload={
-    "email":this.state.username,
-    "password":this.state.password
+    email:this.state.username,
+    password:this.state.password
     }
     axios.post(apiBaseUrl+'/login', payload)
     .then(function (response) {

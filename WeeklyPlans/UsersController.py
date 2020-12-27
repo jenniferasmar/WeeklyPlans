@@ -1,14 +1,23 @@
 from flask import Flask, request
-from Services.UsersService import UsersService
+from Services import UsersService
 from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 
 
+# requests name, password and email in body
 @app.route("/createUser", methods=['POST'])
 @cross_origin()
 def create():
     data = request.data
     return UsersService.create_user(data)
+
+
+# request email and password in body
+@app.route("/login", methods=['POST'])
+@cross_origin()
+def login():
+    data = request.json
+    return UsersService.login_user(data)
 
 
 if __name__ == "__main__":
