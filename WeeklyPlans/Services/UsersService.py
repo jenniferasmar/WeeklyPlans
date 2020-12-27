@@ -8,9 +8,12 @@ from flask import Response
 
 def create_user(data):
     user_dict = json.loads(data, object_hook=lambda d: SimpleNamespace(**d))
-    user = Users(user_dict)
-    MySQL_Properties.add_user(user)
-    return user.name
+    user_db = MySQL_Properties.get_user_by_email(user_dict.email)
+    if not user_db:
+        user = Users(user_dict)
+        MySQL_Properties.add_user(user)
+        return Response("{User Registered}", status=200, mimetype='application/json')
+    return Response("{User Exists}", status=203, mimetype='application/json')
 
 
 def login_user(data):

@@ -62,8 +62,8 @@ class Register extends Component {
     axios.post(apiBaseUrl+'/createUser', payload)
    .then(function (response) {
      console.log(response);
-     if(response.data.code == 200){
-      //  console.log("registration successfull");
+     if(response.status == 200){
+       console.log("registration successfull");
        var loginscreen=[];
        loginscreen.push(<Login parentContext={this}/>);
        var loginmessage = "Not Registered yet.Go to registration";
@@ -72,6 +72,10 @@ class Register extends Component {
        buttonLabel:"Register",
        isLogin:true
         });
+     }
+     else if(response.status == 203){
+      console.log("This email is already in the system!");
+      alert("This email is already in the system!");
      }
    })
    .catch(function (error) {
