@@ -26,7 +26,7 @@ def get_users():
 def get_user_by_email(email):
     users = get_users()
     for x in users:
-        if x[2] == email:
+        if x[1] == email:
             return x
 
 

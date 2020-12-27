@@ -17,7 +17,8 @@ def create():
 @cross_origin()
 def login():
     data = request.json
-    return UsersService.login_user(data)
+    result = UsersService.login_user(data)
+    return result
 
 
 if __name__ == "__main__":

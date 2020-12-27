@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 
-class test {
+class test extends Component{
     render() { return(
-        <h1>Hello, world!</h1>,
-        document.getElementById('root')
-        )
-    }
+        <div>
+        <h1>Hello, world!</h1>
+        </div>
+    )}
 }
 
 export default test;
