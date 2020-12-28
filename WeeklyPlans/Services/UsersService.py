@@ -4,6 +4,9 @@ import MySQL_Properties
 from Models.Users import Users
 from flask_api import status
 from flask import Response
+from Models.CurrentParameters import CurrentParameters
+
+current_parameter = CurrentParameters.instance()
 
 
 def create_user(data):
@@ -21,6 +24,7 @@ def login_user(data):
     if not user:
         return Response("{User not found}", status=203, mimetype='application/json')
     if user[2] == data['password']:
+        current_parameter.current_user = user
         return Response("{User logged in}", status=200, mimetype='application/json')
     if user[2] != data['password']:
         return Response("{Password do not match}", status=204, mimetype='application/json')

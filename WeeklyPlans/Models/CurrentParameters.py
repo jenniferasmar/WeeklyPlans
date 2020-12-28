@@ -1,5 +1,6 @@
 from datetime import datetime, date
 from Models.Day import DayOfWeek
+from Models.Users import Users
 
 
 class CurrentParameters:
@@ -16,7 +17,7 @@ class CurrentParameters:
             self.current_date = today.strftime("%d/%m/%Y")
             self.current_time = now.strftime("%H:%M:%S")
             week_day = datetime.today().weekday()
-            self.current_day = DayOfWeek(week_day+1)
+            self.current_day = DayOfWeek(week_day + 1)
             CurrentParameters._instance = self
 
     @staticmethod
