@@ -1,5 +1,5 @@
 import enum
-from Task import Task
+from Models.Task import Task
 
 
 class DayOfWeek(enum.Enum):
