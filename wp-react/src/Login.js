@@ -55,11 +55,13 @@ render() {
     console.log("Login successfull");
     var uploadScreen=[];
     uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
+    console.log(self.props)
     self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
+    console.log(self.props)
     }
     else if(response.status == 204){
     console.log("Username password do not match");
-    alert("username password do not match")
+    alert("username password do not match");
     }
     else{
     console.log("Username does not exists");
