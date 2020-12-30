@@ -15,8 +15,8 @@ class Task:
         self.duration = task_duration
         self.repeat = False
 
-    def set_repeat(self):
-        self.repeat = True
+    def set_repeat(self, boolean: bool):
+        self.repeat = boolean
 
 
 
