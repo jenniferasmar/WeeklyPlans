@@ -1,5 +1,4 @@
 import enum
-from Models.Day import Day
 
 
 class TaskType(enum.Enum):
@@ -9,11 +8,15 @@ class TaskType(enum.Enum):
 
 
 class Task:
-    def __init__(self, task_name: str, task_type: TaskType, task_duration: float, task_days: list[Day]):
+    def __init__(self, task_name: str, task_type: TaskType, task_start: float, task_duration: float):
         self.title = task_name
         self.type = task_type
+        self.start_time = task_start
         self.duration = task_duration
-        self.which_day = task_days
+        self.repeat = False
+
+    def set_repeat(self):
+        self.repeat = True
 
 
 
